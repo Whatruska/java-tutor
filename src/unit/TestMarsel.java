@@ -1,7 +1,13 @@
 package unit;
 import comp.Cat;
-import org.junit.Test;
+//JUnit 5
+import org.junit.jupiter.api.Test;
+//JUnit 5
 import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TestMarsel {
     Cat testCat;
     @BeforeEach
@@ -16,24 +22,27 @@ public class TestMarsel {
         //Создаете объект который хотите протестить
         //Восоздаете тестируемую ситуацию
         //Сравниваете объект с тем, который ожидаете получить
-
         testCat.meow();
-        assert testCat.getWeight() == 99;
+        assertEquals(testCat.getWeight(), 99);
     }
     //Тест-кейс: при попытке покомить кота отрицательным кол-вом корма, вес не изменяется
     //Ожидаем ошибку
-    @Test(expected = Exception.class)
-    public void shouldFeedWithNegativeIntNotAffectWeightAndThrowException() throws Exception {
-        testCat.feed(-100);
-        assert testCat.getWeight() == 100;
+    @Test
+    public void shouldFeedWithNegativeIntNotAffectWeightAndThrowException() {
+        assertThrows(Exception.class, () -> {
+            testCat.feed(-100);
+        });
+        assertEquals(testCat.getWeight(), 100);
     }
     //Тест-кейс: при "мяу" с весом 0, вес не может быть меньше 0
     //Ждем ошибку
-    @Test(expected = Exception.class)
-    public void test() throws Exception {
-        for (int i = 0; i < 101; i++) {
-            testCat.meow();
-        }
-        assert testCat.getWeight() == 0;
+    @Test
+    public void test() {
+        assertThrows(Exception.class, () -> {
+            for (int i = 0; i < 101; i++) {
+                testCat.meow();
+            }
+        });
+        assertEquals(testCat.getWeight(), 0);
     }
 }

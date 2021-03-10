@@ -1,16 +1,24 @@
 import list.CustomList;
+import map.list.ListMap;
+import set.ListSet;
 
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> ints = new ArrayList<>();
-        ints.add(4);
+        ListMap<String, Integer> scores = new ListMap<>();
 
-        CustomList<Double> list = new CustomList<>(4.0);
-        list.add(5.0);
-        list.add(6.0);
-        list.insert(1, 15.0);
-        System.out.println(list);
+        scores.put("Петя", 20);
+        scores.put("Аня", 10);
+        scores.put("Петя", 15);
+        scores.delete("Аня");
+
+        System.out.println(scores);
+
+        ListSet<Integer> set = new ListSet<>(5);
+        set.put(3);
+        set.put(4);
+        set.delete(5);
+        System.out.println(set);
     }
 }
