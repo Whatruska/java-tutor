@@ -69,8 +69,23 @@ public class CustomList<T> {
         return size;
     }
 
+    public void recountSize() {
+        int currSize = 0;
+        ListItem<T> item = head;
+        while (item != null) {
+            item = item.getNext();
+            currSize++;
+        }
+        size = currSize;
+    }
+
     public ListItem<T> getHead() {
         return head;
+    }
+
+    public void setHead(ListItem<T> head) {
+        this.head = head;
+        recountSize();
     }
 
     @Override
