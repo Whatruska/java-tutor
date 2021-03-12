@@ -1,6 +1,6 @@
 #Contacts
 Implement a thirdLesson.phone contancts interface
-1. Make a contacts secondLesson.list
+1. Make a contacts list
     - Phone -> Contact DTO
     - Contact DTO
       - Name
@@ -10,3 +10,4 @@ Implement a thirdLesson.phone contancts interface
 2. Get a contact by phone number
 3. Get a possible contacts by name
 4. Save all information at info.txt
+5. Add new contact by phone number
