@@ -3,7 +3,7 @@ package thirdLesson.planes;
 import java.util.Scanner;
 
 public class Loader {
-    static PlanesManager planesManager = new PlanesMangerImpl();
+    static PlanesManager planesManager = new PlanesManagerImpl();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

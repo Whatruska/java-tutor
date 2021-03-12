@@ -2,7 +2,7 @@ package thirdLesson.planes;
 
 import java.util.Stack;
 
-public class PlanesMangerImpl implements PlanesManager {
+public class PlanesManagerImpl implements PlanesManager {
     private Stack<String> stack = new Stack<>();
     private final int MAX_PLANES_PLACES = 5;
 
