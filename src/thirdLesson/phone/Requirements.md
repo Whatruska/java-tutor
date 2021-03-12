@@ -1,5 +1,5 @@
 #Contacts
-Implement a thirdLesson.phone contancts interface
+Implement a phone contacts interface
 1. Make a contacts list
     - Phone -> Contact DTO
     - Contact DTO
