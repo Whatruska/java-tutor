@@ -11,9 +11,14 @@ Second part
 1. Stack
 2. Queue
 3. Deque
-   
+
 # Third Lesson
-4. Dynamic Array
-5. ArrayMap
-6. HashMap
-7. HashSet
+0. Cats
+1. Plane parking
+2. Phone contacts
+
+# Fourth Lesson
+1. Dynamic Array
+2. ArrayMap
+3. HashMap
+4. HashSet
