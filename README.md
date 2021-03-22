@@ -18,7 +18,14 @@ Second part
 2. Phone contacts
 
 # Fourth Lesson
-1. Dynamic Array
-2. ArrayMap
-3. HashMap
-4. HashSet
+1. Kraskal
+2. Prime
+
+# Fifth
+1. Weather parsing
+    1. Manual Deserialization
+       1. Working with Dates (Timestamps)
+    2. Stream API
+    3. Writing in files
+2. Serialization out-of-box
+3. Working with files and folders
