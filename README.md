@@ -21,11 +21,15 @@ Second part
 1. Kraskal
 2. Prime
 
-# Fifth
+# Fifth Lesson
 1. Weather parsing
     1. Manual Deserialization
        1. Working with Dates (Timestamps)
     2. Stream API
     3. Writing in files
-2. Serialization out-of-box
+
+# Sixth Lesson
+1. Serialization out-of-box
+2. XML Serialization
+3. JSON Serialization*
 3. Working with files and folders

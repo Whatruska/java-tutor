@@ -1,0 +1,16 @@
+<list>
+    <weather>
+        <date>2021-03-24 17:05:34.521 UTC</date>
+        <temperature>14.0</temperature>
+        <humidity>70.0</humidity>
+        <windSpeed>10.0</windSpeed>
+        <windDirection>90.0</windDirection>
+    </weather>
+    <weather>
+        <date>2021-03-27 06:06:06.666 UTC</date>
+        <temperature>15.0</temperature>
+        <humidity>72.0</humidity>
+        <windSpeed>17.0</windSpeed>
+        <windDirection>9.0</windDirection>
+    </weather>
+</list>
