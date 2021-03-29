@@ -72,6 +72,7 @@ public class Loader_2 {
                 <date>...<date>
                 <temperature>10.0</temperature>
          */
+
         WeatherDto dto = (WeatherDto) xstream.fromXML(xml);
         return dto;
     }
@@ -84,3 +85,4 @@ public class Loader_2 {
         return dtos;
     }
 }
+

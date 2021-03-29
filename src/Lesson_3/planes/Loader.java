@@ -29,7 +29,7 @@ public class Loader {
         } while (!cmd.equals("exit"));
     }
 
-    public static void addPlane (String cmd) {
+    public static void addPlane(String cmd) {
         String[] cmdParts = cmd.split(" ");
         if (cmdParts.length < 2) {
             System.out.println("Введи команду нормально!");
@@ -42,7 +42,7 @@ public class Loader {
         }
     }
 
-    public static void exitLast () {
+    public static void exitLast() {
         try {
             planesManager.exitLast();
         } catch (Exception e) {

@@ -4,7 +4,8 @@ public class CustomList<T> {
     private ListItem<T> head;
     private int size = 0;
 
-    public CustomList() {}
+    public CustomList() {
+    }
 
     public CustomList(T firstValue) {
         head = new ListItem<T>(firstValue);
@@ -34,7 +35,7 @@ public class CustomList<T> {
     public void add(T value) {
         if (size == 0) {
             head = new ListItem<>(value);
-        } else  {
+        } else {
             ListItem<T> elem = get(size - 1);
             elem.setNext(
                     new ListItem<>(value)
@@ -43,10 +44,10 @@ public class CustomList<T> {
         size++;
     }
 
-    public void delete(int index){
-        if (index <= -1){
+    public void delete(int index) {
+        if (index <= -1) {
             deleteHead();
-        } else if (index < size() - 1){
+        } else if (index < size() - 1) {
             ListItem<T> element = get(index);
             ListItem<T> del = element.getNext();
             ListItem<T> next = del.getNext();
@@ -59,8 +60,8 @@ public class CustomList<T> {
         size--;
     }
 
-    public void deleteHead(){
-        ListItem<T> nextHead  = head.getNext();
+    public void deleteHead() {
+        ListItem<T> nextHead = head.getNext();
         head.setNext(null);
         this.head = nextHead;
     }

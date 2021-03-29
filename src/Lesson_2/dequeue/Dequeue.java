@@ -6,13 +6,14 @@ import Lesson_2.tailedList.TailedList;
 public class Dequeue<T> {
     private TailedList<T> tailedList = new TailedList<>();
 
-    public Dequeue() {}
+    public Dequeue() {
+    }
 
     public Dequeue(T value) {
         tailedList.append(value);
     }
 
-    public T popFirst () {
+    public T popFirst() {
         T value = tailedList.getHead().getValue();
         tailedList.delete(-1);
         return value;
@@ -25,7 +26,7 @@ public class Dequeue<T> {
         tailedList.getList().setHead(newItem);
     }
 
-    public T popLast () {
+    public T popLast() {
         T value = tailedList.getTail().getValue();
         tailedList.delete(tailedList.size() - 1);
         return value;
