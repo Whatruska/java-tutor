@@ -1,6 +1,6 @@
 package Lesson_6;
 
-/*import Lesson_5.WeatherDto;
+import Lesson_5.WeatherDto;
 import Lesson_5.WeatherDtoBuilder;
 import com.thoughtworks.xstream.XStream;
 
@@ -72,7 +72,7 @@ public class Loader_2 {
                 <date>...<date>
                 <temperature>10.0</temperature>
          */
-/*
+
         WeatherDto dto = (WeatherDto) xstream.fromXML(xml);
         return dto;
     }
@@ -85,4 +85,4 @@ public class Loader_2 {
         return dtos;
     }
 }
- */
+
