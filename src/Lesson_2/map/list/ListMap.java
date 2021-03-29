@@ -6,13 +6,14 @@ import Lesson_2.list.ListItem;
 public class ListMap<K, V> {
     private CustomList<ListMapItem<K, V>> map = new CustomList<>();
 
-    public ListMap() {}
+    public ListMap() {
+    }
 
     public ListMap(K key, V value) {
         map.add(new ListMapItem<>(key, value));
     }
 
-    public boolean contains (K key) {
+    public boolean contains(K key) {
         ListItem<ListMapItem<K, V>> item = map.getHead();
         while (item != null) {
             if (item.getValue().getKey().equals(key)) {
@@ -23,7 +24,7 @@ public class ListMap<K, V> {
         return false;
     }
 
-    private ListItem<ListMapItem<K, V>> getItem (K key) {
+    private ListItem<ListMapItem<K, V>> getItem(K key) {
         ListItem<ListMapItem<K, V>> item = map.getHead();
         while (item != null) {
             if (item.getValue().getKey().equals(key)) {
@@ -34,7 +35,7 @@ public class ListMap<K, V> {
         return null;
     }
 
-    public V get (K key) {
+    public V get(K key) {
         ListItem<ListMapItem<K, V>> item = getItem(key);
         if (item == null) {
             return null;
@@ -43,7 +44,7 @@ public class ListMap<K, V> {
         }
     }
 
-    public void put (K key, V value) {
+    public void put(K key, V value) {
         if (contains(key)) {
             ListItem<ListMapItem<K, V>> item = getItem(key);
             item.getValue().setValue(value);
@@ -52,7 +53,7 @@ public class ListMap<K, V> {
         }
     }
 
-    public void delete (K key) {
+    public void delete(K key) {
         if (contains(key)) {
             int index = -1;
             ListItem<ListMapItem<K, V>> item = map.getHead();

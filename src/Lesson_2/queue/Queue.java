@@ -6,25 +6,26 @@ import Lesson_2.tailedList.TailedList;
 public class Queue<T> {
     private TailedList<T> tailedList = new TailedList<>();
 
-    public Queue() {}
+    public Queue() {
+    }
 
     public Queue(T value) {
         tailedList.append(value);
     }
 
     //Посмотреть
-    public T peekFirst () {
+    public T peekFirst() {
         return tailedList.getHead().getValue();
     }
 
     //Удалить
-    public T popFirst () {
+    public T popFirst() {
         T value = tailedList.getHead().getValue();
         tailedList.delete(-1);
         return value;
     }
 
-    public T peekLast () {
+    public T peekLast() {
         return tailedList.getTail().getValue();
     }
 
@@ -32,7 +33,7 @@ public class Queue<T> {
         tailedList.append(value);
     }
 
-    public T get (int index) {
+    public T get(int index) {
         return tailedList.getValue(index);
     }
 

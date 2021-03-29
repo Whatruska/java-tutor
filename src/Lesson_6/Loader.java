@@ -1,6 +1,6 @@
 package Lesson_6;
 
-import Lesson_5.WeatherDto;
+/*import Lesson_5.WeatherDto;
 import Lesson_5.WeatherDtoBuilder;
 
 import java.io.*;
@@ -40,7 +40,7 @@ public class Loader {
         OutputStream outputStream = new FileOutputStream(file);
         ObjectOutputStream out = new ObjectOutputStream(outputStream);
 
-        for (WeatherDto dto: dtos) out.writeObject(dto);
+        for (WeatherDto dto : dtos) out.writeObject(dto);
 
         out.flush();
         out.close();
@@ -56,6 +56,7 @@ public class Loader {
         /*
             while(stream.hasNext()) {...}
          */
+/*
         dtos.add((WeatherDto) in.readObject());
         dtos.add((WeatherDto) in.readObject());
 
@@ -63,3 +64,4 @@ public class Loader {
         return dtos;
     }
 }
+*/

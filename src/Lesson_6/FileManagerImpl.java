@@ -57,7 +57,7 @@ public class FileManagerImpl implements FileManager {
             System.out.println(tabs + name);
             if (file.isDirectory()) {
                 File[] files = file.listFiles();
-                for (File innerFile: files) {
+                for (File innerFile : files) {
                     recursivePrintFileTree(innerFile, currDepth + 1, maxDepth);
                 }
             }

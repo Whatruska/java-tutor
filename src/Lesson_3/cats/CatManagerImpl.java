@@ -12,7 +12,7 @@ public class CatManagerImpl implements CatManager {
     @Override
     public Map<String, Cat> getNameCatMap() {
         TreeMap<String, Cat> nameCatMap = new TreeMap<>();
-        for (Cat cat: sourceArray) {
+        for (Cat cat : sourceArray) {
             String name = cat.getName();
             nameCatMap.put(name, cat);
         }
@@ -22,7 +22,7 @@ public class CatManagerImpl implements CatManager {
     @Override
     public Map<Integer, List<Cat>> getAgeCatMap() {
         TreeMap<Integer, List<Cat>> ageCatMap = new TreeMap<>();
-        for (Cat cat: sourceArray) {
+        for (Cat cat : sourceArray) {
             int age = cat.getAge();
             List<Cat> currentCats = ageCatMap.get(age);
             if (currentCats == null) {
@@ -37,7 +37,7 @@ public class CatManagerImpl implements CatManager {
     @Override
     public Map<Cat, List<Cat>> getChildrenCatMap() {
         HashMap<Cat, List<Cat>> childrenCatMap = new HashMap<>();
-        for (Cat cat: sourceArray) {
+        for (Cat cat : sourceArray) {
             Cat mother = cat.getMotherCat();
             Cat father = cat.getFatherCat();
 

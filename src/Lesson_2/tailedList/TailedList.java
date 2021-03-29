@@ -7,14 +7,15 @@ public class TailedList<T> {
     private CustomList<T> list = new CustomList<>();
     private ListItem<T> tail;
 
-    public TailedList() {}
+    public TailedList() {
+    }
 
     public TailedList(T value) {
         list.add(value);
         tail = list.getHead();
     }
 
-    public void append (T value) {
+    public void append(T value) {
         list.add(value);
         recountTail();
     }
@@ -33,7 +34,7 @@ public class TailedList<T> {
         return list.get(index).getValue();
     }
 
-    public int size () {
+    public int size() {
         return list.size();
     }
 
@@ -45,7 +46,7 @@ public class TailedList<T> {
         return list.getHead();
     }
 
-    public void recountTail () {
+    public void recountTail() {
         tail = list.get(list.size() - 1);
     }
 

@@ -53,15 +53,15 @@ public class Loader {
 
         System.out.println("Первая мапа");
         Map<String, Cat> firstMap = catManager.getNameCatMap();
-        for (String name: firstMap.keySet()) {
+        for (String name : firstMap.keySet()) {
             Cat cat = firstMap.get(name);
-            System.out.println(name + " -> {" + cat.getName() + " , " + cat.getAge() + "}" );
+            System.out.println(name + " -> {" + cat.getName() + " , " + cat.getAge() + "}");
         }
         System.out.println("");
 
         System.out.println("Вторая мапа");
         Map<Integer, List<Cat>> secondMap = catManager.getAgeCatMap();
-        for (Integer age: secondMap.keySet()) {
+        for (Integer age : secondMap.keySet()) {
             List<Cat> cats = secondMap.get(age);
             System.out.println("Возраст: " + age);
             for (Cat cat : cats) {
@@ -72,7 +72,7 @@ public class Loader {
 
         System.out.println("Третья мапа");
         Map<Cat, List<Cat>> childrenMap = catManager.getChildrenCatMap();
-        for (Cat cat: childrenMap.keySet()) {
+        for (Cat cat : childrenMap.keySet()) {
             if (cat != null) {
                 List<Cat> childrenList = childrenMap.get(cat);
                 System.out.println("Список детей " + cat.getName() + ":");

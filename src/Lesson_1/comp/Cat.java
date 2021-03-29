@@ -1,6 +1,6 @@
 package Lesson_1.comp;
 
-public class Cat implements Comparable<Cat>{
+public class Cat implements Comparable<Cat> {
     private int weight;
     private String name;
 
