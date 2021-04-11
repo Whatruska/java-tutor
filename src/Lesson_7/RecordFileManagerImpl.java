@@ -40,6 +40,50 @@ public class RecordFileManagerImpl implements RecordFileManager{
         return list;
     }
 
+    @Override
+    public void writeCommonReport(Map<String, ClassReportDto> map) {
+        createReportFolder();
+        File commonReportFile = new File(Paths.get(REPORT_FOLDER_PATH + "/report.txt").toUri());
+        try {
+            PrintWriter writer = new PrintWriter(commonReportFile);
+            map.keySet().forEach(clas -> {
+                ClassReportDto reportDto = map.get(clas);
+                writer.println(clas + " | " + reportDto.getPeopleCount() + " | " + reportDto.getPreferedFormat());
+            });
+            writer.flush();
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void writeSpecificReports(Map<String, Map<String, List<String>>> map) {
+        createReportFolder();
+        map.keySet().forEach(clas -> {
+            File classFolder = new File(Paths.get(REPORT_FOLDER_PATH + "/" + clas).toUri());
+            classFolder.mkdir();
+            File infoFile = new File(Paths.get(REPORT_FOLDER_PATH + "/" + clas + "/info.txt").toUri());
+            try {
+                PrintWriter writer = new PrintWriter(infoFile);
+                Map<String, List<String>> groupMap = map.get(clas);
+                groupMap.keySet().forEach(group -> {
+                    writer.println(group);
+                    writer.println("-------");
+                    List<String> fios = groupMap.get(group);
+                    fios.forEach(writer::println);
+                    writer.println("Всего людей: " + fios.size());
+                    writer.println("\n");
+                });
+                writer.flush();
+                writer.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
     private void createReportFolder() {
         File folder = new File(Paths.get(REPORT_FOLDER_PATH).toUri());
         if (!folder.exists()) {
@@ -47,69 +91,10 @@ public class RecordFileManagerImpl implements RecordFileManager{
         }
     }
 
-    @Override
-    public void createMainReportFile(Map<String, Integer> participantsMap, Map<String, String> formatMap) {
-        createReportFolder();
-        File reportFile = new File(Paths.get(REPORT_FOLDER_PATH + "/report.txt").toUri());
-        if (!reportFile.exists()) {
-            try {
-                reportFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            PrintWriter writer = new PrintWriter(reportFile);
-            participantsMap
-                    .keySet()
-                    .stream().sorted((clas1, clas2) -> {
-                        int participants1 = participantsMap.get(clas1);
-                        int participants2 = participantsMap.get(clas2);
-                        return participants2 - participants1;
-                    })
-                    .forEach(clas -> {
-                String line = clas + " | " + participantsMap.get(clas) + " | " + formatMap.get(clas);
-                writer.println(line);
-            });
-            writer.flush();
-            writer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void createReportForClass(String className, Map<String, Set<String>> groupStatMap) {
-        createReportFolder();
-        File subfolder = new File(Paths.get(REPORT_FOLDER_PATH + "/" + className).toUri());
-        if (!subfolder.exists()) {
-            subfolder.mkdir();
-        }
-
-        File infoFile = new File(Paths.get(REPORT_FOLDER_PATH + "/" + className + "/info.txt").toUri());
-        try {
-            PrintWriter out = new PrintWriter(infoFile);
-            groupStatMap.keySet().forEach(group -> {
-                out.println(group);
-                out.println("-------");
-                Set<String> people = groupStatMap.get(group);
-                long peopleCount = people.size();
-                out.println("Всего людей: " + peopleCount);
-                people.forEach(out::println);
-                out.println("\n");
-            });
-            out.flush();
-            out.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     private static Record deserialize(String line) {
         String[] lineParts = line.split("\t+");
         Set<String> classes = Arrays.stream(lineParts[3].split(",")).map(clas ->
-            clas.trim().replaceAll("/", " | ")
+            clas.trim().replaceAll("/", " - ")
         ).collect(Collectors.toSet());
         return new Record.RecordBuilder()
                 .date(lineParts[0].trim())

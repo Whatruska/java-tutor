@@ -6,12 +6,6 @@ import java.util.Set;
 
 public interface RecordFileManager {
     List<Record> readRecordsFromDataset();
-    void createMainReportFile(
-            Map<String, Integer> participantsMap,
-            Map<String, String> formatMap
-    );
-    void createReportForClass(
-            String className,
-            Map<String, Set<String>> groupStatMap
-    );
+    void writeCommonReport (Map<String, ClassReportDto> map);
+    void writeSpecificReports (Map<String, Map<String, List<String>>> map);
 }
