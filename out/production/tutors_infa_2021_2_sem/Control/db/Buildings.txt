@@ -1,0 +1,12 @@
+id = House_2
+class = Control.classes.House
+number = 15 к1
+square = 200.43
+city = Москва
+-------
+id = House_1
+class = Control.classes.House
+number = 15A
+square = 100.5
+city = Kazan
+-------

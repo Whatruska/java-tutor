@@ -1,0 +1,7 @@
+id = Circle_1
+class = Control.classes.Circle
+x = 15.0
+y = 6.5
+r = 10.5
+color = red
+-------
