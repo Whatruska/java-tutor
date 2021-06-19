@@ -1,0 +1,5 @@
+id = Васян
+class = Control.classes.Cat
+name = Васька
+age = 14
+-------
